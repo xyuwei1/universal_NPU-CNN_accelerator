@@ -151,6 +151,7 @@ parameter zero_padding = 1)
 
 	reg enable_write_reading, rightest, pre_rightest;
 	//write during reading
+	// 计算是否为 pre_rightest 与 rightest（用于后续边界处理）
 	always @(*) begin
 		if (i == (input_width/(memory_width-filter_width-filter_width*filter_height+1)) -1) pre_rightest =1;
 		else pre_rightest =0;
